@@ -25,5 +25,5 @@ To run this project locally, make sure you have [Node.js](https://nodejs.org/) i
    npm run build
    npm run preview
 
-![Project Preview - TOP](./docs/screenshot1.png)
-![Project Preview - BOTTOM](./docs/screenshot2.png)
+![Project Preview - TOP](./assets/screenshot1.png)
+![Project Preview - BOTTOM](./assets/screenshot2.png)

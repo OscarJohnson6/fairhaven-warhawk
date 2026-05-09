@@ -1,21 +1,22 @@
 import { useState } from 'react'
 
 const timestamps = [
-  { time: '0:00', seconds: 0, label: 'Introduction', desc: 'Brief overview of Warhawk Catholic & Fairhaven' },
-  { time: '1:20', seconds: 80, label: 'Tour of the Space', desc: 'Church & Fairhaven community grounds' },
-  { time: '3:10', seconds: 190, label: 'The Connection', desc: 'Transition into personal stories' },
-  { time: '4:30', seconds: 270, label: 'Interviews', desc: 'Residents & student participants' },
-  { time: '7:00', seconds: 420, label: 'Outro', desc: 'Conclusion and closing thoughts' },
+  { time: '0:00', seconds: 0, label: 'Introduction', desc: 'Brief snapshots of Warhawk Catholic & Fairhaven' },
+  { time: '0:20', seconds: 20, label: 'Resident Perspectives', desc: 'Interviews with the Fairhaven residents' },
+  { time: '2:15', seconds: 135, label: 'Student Connection', desc: 'Interviewing a participanting student' },
+  { time: '5:00', seconds: 300, label: 'Conclusion', desc: 'Outro' },
 ]
 
+// TODO: Group members name
 const interviewees = [
-  { initials: 'R1', name: 'Resident Name', role: 'Fairhaven Resident' },
-  { initials: 'R2', name: 'Resident Name', role: 'Fairhaven Resident' },
-  { initials: 'S1', name: 'Student Name', role: 'Warhawk Catholic Participant' },
-  { initials: 'S2', name: 'Student Name', role: 'Warhawk Catholic Participant' },
+  { initials: 'R1', name: '[Resident Name - Lady 1]', role: 'Fairhaven Resident' },
+  { initials: 'RC', name: '[Couple Name]', role: 'Fairhaven Residents' },
+  { initials: 'R2', name: '[Resident Name - Lady 2]', role: 'Fairhaven Resident' },
+  { initials: 'S1', name: '[Student Name - Guy]', role: 'Warhawk Catholic Student' },
 ]
 
-const YOUTUBE_EMBED_BASE = `https://www.youtube.com/embed/VIDEO_ID` // TODO: Replace VIDEO_ID with actual YouTube video ID
+// TODO: Replace VIDEO_ID with your actual YouTube video
+const YOUTUBE_EMBED_BASE = `https://www.youtube.com/embed/VIDEO_ID` 
 
 export default function App() {
   const [playing, setPlaying] = useState(false)
@@ -24,8 +25,8 @@ export default function App() {
   const handleSeek = (seconds) => {
     setStartTime(seconds)
     setPlaying(true)
-    // Scroll to video player for mobile users
-    window.scrollTo({ top: 400, behavior: 'smooth' })
+    // Dynamically scroll to the video player instead of a hardcoded pixel value
+    document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   return (
@@ -45,7 +46,7 @@ export default function App() {
           Documentary Film · 2026
         </p>
         <h1 className="font-serif text-[#f5ede0] text-4xl md:text-5xl leading-tight mb-4">
-          The Legacy of<br />St. Jeanne Jugan
+          Bridges Across<br />Generations
         </h1>
         <p className="text-[#8fa3c8] font-light text-base max-w-md mx-auto leading-relaxed">
           Highlighting the connection between the UW‑Whitewater student community and Fairhaven Senior Living.
@@ -53,7 +54,7 @@ export default function App() {
       </header>
 
       {/* ── Video Player ─────────────────────────────────────── */}
-      <section className="bg-white px-6 py-12">
+      <section id="video-section" className="bg-white px-6 py-12 scroll-mt-6">
         <p className="text-[#c8a96e] text-xs tracking-widest uppercase mb-1 font-medium">
           Watch the Film
         </p>
@@ -64,7 +65,7 @@ export default function App() {
             <iframe
               className="w-full h-full"
               src={`${YOUTUBE_EMBED_BASE}?autoplay=1&start=${startTime}`}
-              title="The Legacy of St. Jeanne Jugan"
+              title="Bridges Across Generations Documentary"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
@@ -226,7 +227,7 @@ export default function App() {
         <div>
           <p className="text-[#e8d9b4] text-sm font-serif">Fairhaven × Warhawk Catholic</p>
           <p className="text-[#8fa3c8] text-xs mt-1">
-            {/* TODO: Add contact information */}
+            {/* TODO: Add a specific contact email if desired */}
             <a href="mailto:contact@uww.edu" className="hover:text-white transition-colors underline underline-offset-4">
               contact@uww.edu 
             </a>
