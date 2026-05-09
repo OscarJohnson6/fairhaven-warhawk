@@ -9,10 +9,10 @@ const timestamps = [
 
 // TODO: Group members name
 const interviewees = [
-  { initials: 'R1', name: '[Resident Name - Lady 1]', role: 'Fairhaven Resident' },
-  { initials: 'RC', name: '[Couple Name]', role: 'Fairhaven Residents' },
-  { initials: 'R2', name: '[Resident Name - Lady 2]', role: 'Fairhaven Resident' },
-  { initials: 'S1', name: '[Student Name - Guy]', role: 'Warhawk Catholic Student' },
+  { initials: 'R1', name: '[Resident 1]', role: 'Fairhaven Resident' },
+  { initials: 'R2', name: '[Resident 2]', role: 'Fairhaven Resident' },
+  { initials: 'R3', name: '[Resident 3]', role: 'Fairhaven Resident' },
+  { initials: 'S1', name: '[Student Name]', role: 'Warhawk Catholic Student' },
 ]
 
 // TODO: Replace VIDEO_ID with your actual YouTube video
@@ -46,14 +46,14 @@ export default function App() {
           Documentary Film · 2026
         </p>
         <h1 className="font-serif text-[#f5ede0] text-4xl md:text-5xl leading-tight mb-4">
-          Bridges Across<br />Generations
+          Connection Fairhaven and UW Catholic 
         </h1>
         <p className="text-[#8fa3c8] font-light text-base max-w-md mx-auto leading-relaxed">
           Highlighting the connection between the UW‑Whitewater student community and Fairhaven Senior Living.
         </p>
       </header>
 
-      {/* ── Video Player ─────────────────────────────────────── */}
+      {/* ── Video Player ───────────────────────────────────────── */}
       <section id="video-section" className="bg-white px-6 py-12 scroll-mt-6">
         <p className="text-[#c8a96e] text-xs tracking-widest uppercase mb-1 font-medium">
           Watch the Film
